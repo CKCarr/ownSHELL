@@ -34,15 +34,25 @@ struct path_node
 extern char **environ;
 
 /*PROTOTYPES*/
+
 struct path_node *create_path_node(char *directory);
+
 void free_path_list(struct path_node *head);
+
 struct path_node *parse_path_directories();
+
 void traverse_path_list(struct path_node *head);
 
+int set_env(const char *name, const char *value, int overwrite);
 
+int _add_env_var(const char *name, const char *value);
 
+int _update_env_var(char **env, const char *name, const char *value);
 
+int environ_size(void);
 
+int _putenv(char *str);
 
+void free_environ(void);
 
 #endif /*HSHELL_H*/
